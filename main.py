@@ -1,5 +1,6 @@
-#import os allows the file to run across systems
+#allow os to run across different systems
 import os
 
-paragrah = os.path.join('paragrah_1.csv')
+election_data = os.path.join('election_data_1.csv')
+
 
