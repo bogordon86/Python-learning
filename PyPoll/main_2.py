@@ -15,12 +15,12 @@ candidates = {}
 with open("election_data_1.csv", 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     next (csvreader, None)
+#Calculate Total Votes for each Candidate and Print
     total = "Total Votes: "
     count = (len(open("election_data_1.csv").readlines())-1)
     print(total + str(count))
-    for row in csvreader:
 
-#Print out the total number of votes
+    for row in csvreader:
 
 #Find the Candidates Values and Number of Votes
         if row[2] not in candidates:
@@ -28,25 +28,21 @@ with open("election_data_1.csv", 'r') as csvfile:
 
         candidates[row[2]] += 1
 
-    print(candidates)
+        #while candidates:
+        candidate_percent = sum((candidates[row[2]])/count)*100
 
+    print (candidates)
 
-    
-#A complete list of candidates who received votes
-    #used = set()
-    #candidate_list = [x for x in col_3 if x not in used and (used.add(x) or True)]
-    #print(candidate_list)
-
-#The total number of votes each candidate won
 
 #The winner of the election based on popular vote.
-#nner = 0
-   #winner_name = ''
+    Winning_candidate = 0
+    WC_name = ''
 
-   #for name, votes in candidates.items() :
-       #if votes > winner:
-          # winner = votes
-           #winner_name = name
+    for name, votes in candidates.items() :
+        if votes > Winning_candidate:
+            Winning_candidate = votes
+            WC_name = name
 
-   #print("Winner: " + winner_name + " (" + str(winner) +")")
-#Winner equals the largest number from the total number of votes
+    print("Winner: " + WC_name + " (" + str(Winning_candidate) +")")
+
+
