@@ -7,26 +7,31 @@ import csv
  
 # csv file name
 filename = "election_data_1.csv"
- 
+
+#Declaring empty dictionary
+candidates = {}
+
 # reading csv file
 with open("election_data_1.csv", 'r') as csvfile:
-    # creating a csv reader object
-    csvreader = csv.reader(csvfile)
+    csvreader = csv.reader(csvfile, delimiter=',')
+    next (csvreader, None)
+    for row in csvreader:
+        if row[2] not in candidates:
+            candidates[row[2]] = 0
 
-#declare columns
-    col_1 = [x[0] for x in csvreader]
-    col_2 = [x[1] for x in csvreader]
-    col_3 = [x[2] for x in csvreader]
+        candidates[row[2]] += 1
+
+    print(candidates)
 
 #The total number of votes cast
-    total = "Total Votes: "
-    total_col1 = (len(col_1) -1)
-    print ((total)+ str(total_col1))
+        #total = "Total Votes: "
+       # total_votes = len(voter_id)
+   # print (total + str(total_votes))
     
 #A complete list of candidates who received votes
-
-#The percentage of votes each candidate won
-#
+    #used = set()
+    #candidate_list = [x for x in col_3 if x not in used and (used.add(x) or True)]
+    #print(candidate_list)
 
 #The total number of votes each candidate won
 
