@@ -31,5 +31,8 @@ average_letter_count = "Average Letter Count: "
 print(average_letter_count + str(average))
 
 #average sentence length
+sentence = lines.split('.')
+average_sentence_count = sum(len(x.split()) for x in sentence) / len(sentence)
+average_sentence_length = "Average Sentence Length: "
+print(average_sentence_length + str(average_sentence_count))
 
-#average_sentence = "Average Sentence Length: "
