@@ -41,8 +41,7 @@ with open("election_data_1.csv", 'r') as csvfile:
 
         candidates_2[candidate] += 1
 
-        # Divide count by total items, make percent
-        # aka accessing everything in the dictionary
+        # Divide count by total items to produce percent
         for key, candidate in candidates_2.items():
             # declare percent as a int
             percent = 0
