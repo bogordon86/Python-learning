@@ -45,12 +45,16 @@ with open("election_data_1.csv", 'r') as csvfile:
         for key, candidate in candidates_2.items():
             # declare percent as a int
             percent = 0
-        # Divide value by the total
-        percent = value / count
+
         # Format as percent
         percent = '{0:.0f}%'.format(percent * 100)
         # key = candidate, value = vote count for candidate, percent
-    print(str(candidate) + str(value) + str(percent))
+    print('asoidfjas')
+    for candidate in candidates_2:
+        # Divide value by the total
+        value = candidates_2fsdafsd[candidate]
+        percent = value / count
+        print(str(candidate) + str(percent))#str(value) + str(percent))
 
 winner = 0
 winner_name = ''
